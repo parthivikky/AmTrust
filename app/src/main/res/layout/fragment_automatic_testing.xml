@@ -1,0 +1,179 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="mobello.amtrust.com.fragment.AutomaticTestingFragment">
+
+    <LinearLayout
+        style="@style/Match_Parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/wifi_container"
+            style="@style/Wrap_Height">
+
+            <ImageView
+                android:id="@+id/ic_wifi"
+                style="@style/auto_test_icon"
+                android:src="@drawable/ic_wifi_green" />
+
+            <TextView
+                android:id="@+id/txt_wifi"
+                style="@style/auto_test_text"
+                android:layout_toRightOf="@id/ic_wifi"
+                android:text="Wifi" />
+
+            <TextView
+                android:id="@+id/wifi_state"
+                style="@style/auto_test_work"
+                android:text="working"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/usb_container"
+            style="@style/Wrap_Height">
+
+            <ImageView
+                android:id="@+id/ic_data"
+                style="@style/auto_test_icon" />
+
+            <TextView
+                android:id="@+id/txt_data"
+                style="@style/auto_test_text"
+                android:layout_toRightOf="@id/ic_data"
+                android:text="Data Connection" />
+
+            <TextView
+                android:id="@+id/data_state"
+                style="@style/auto_test_work"
+                android:text="working"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bluetooth_container"
+            style="@style/Wrap_Height">
+
+            <ImageView
+                android:id="@+id/ic_bluetooth"
+                style="@style/auto_test_icon"
+                android:src="@drawable/ic_bluetooth_red" />
+
+            <TextView
+                android:id="@+id/txt_bluetooth"
+                style="@style/auto_test_text"
+                android:layout_toRightOf="@+id/ic_bluetooth"
+                android:text="Bluetooth" />
+
+            <TextView
+                android:id="@+id/bluetooth_state"
+                style="@style/auto_test_work"
+                android:text="working"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/gps_container"
+            style="@style/Wrap_Height">
+
+            <ImageView
+                android:id="@+id/ic_gps"
+                style="@style/auto_test_icon"
+                android:src="@drawable/ic_gps_green" />
+
+            <TextView
+                android:id="@+id/txt_gps"
+                style="@style/auto_test_text"
+                android:layout_toRightOf="@+id/ic_gps"
+                android:text="GPS" />
+
+            <TextView
+                android:id="@+id/gps_state"
+                style="@style/auto_test_work"
+                android:text="working"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/battery_container"
+            style="@style/Wrap_Height">
+
+            <ImageView
+                android:id="@+id/ic_battery"
+                style="@style/auto_test_icon"
+                android:src="@drawable/ic_battery_green" />
+
+            <TextView
+                android:id="@+id/txt_battery"
+                style="@style/auto_test_text"
+                android:layout_toRightOf="@+id/ic_battery"
+                android:text="Battery" />
+
+            <TextView
+                android:id="@+id/battery_stae"
+                style="@style/auto_test_work"
+                android:text="working"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/accelerometer_container"
+            style="@style/Wrap_Height">
+
+            <ImageView
+                android:id="@+id/ic_accelerometer"
+                style="@style/auto_test_icon"
+                android:src="@drawable/ic_speedometer_green" />
+
+            <TextView
+                android:id="@+id/txt_accelerometer"
+                style="@style/auto_test_text"
+                android:layout_toRightOf="@+id/ic_accelerometer"
+                android:text="Gyroscope" />
+
+            <TextView
+                android:id="@+id/accelerometer_state"
+                style="@style/auto_test_work"
+                android:text="working"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <com.andexert.library.RippleView
+            style="@style/Wrap_Content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary"
+            app:rv_rippleDuration="100"
+            app:rv_type="simpleRipple"
+            app:rv_zoom="true"
+            app:rv_zoomDuration="100">
+
+            <TextView
+                android:id="@+id/continues"
+                style="@style/Wrap_Content"
+                android:background="@drawable/button_primary_blue"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingTop="10dp"
+                android:text="@string/continues"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+        </com.andexert.library.RippleView>
+
+    </LinearLayout>
+
+</ScrollView>

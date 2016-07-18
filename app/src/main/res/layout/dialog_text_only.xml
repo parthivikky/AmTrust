@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/Match_Parent"
+        android:padding="10dp"
+        android:text="Please fill in the 3 fields above and click the Check button. We will validate the information against our database"
+        android:textColor="@color/dark_gray"
+        android:textSize="12sp" />
+
+</LinearLayout>

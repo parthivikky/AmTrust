@@ -1,0 +1,58 @@
+{
+"result" :[
+  {
+    "type_id": "1",
+    "question": "Pendaftaran akun Blackberry / Blackberry ID setup",
+    "details": [
+      {
+        "photo": "http://cl.amtrustmobilesolutions.asia/portal/images/bb/1a.png",
+        "description": "1. Untuk membuat BBID, langkah pertama adalah masuk ke halaman awal"
+      },
+      {
+        "photo": "http://cl.amtrustmobilesolutions.asia/portal/images/bb/1b.png",
+        "description": "2. Dari halaman awal, geser ke kanan sampai anda menemukan ikon Setelan"
+      },
+      {
+        "photo": "http://cl.amtrustmobilesolutions.asia/portal/images/bb/1c.png",
+        "description": "3. Masuk ke menu Setelan dan geser kebawah sampai anda menemukan menu Blackberry ID"
+      },
+      {
+        "photo": "http://cl.amtrustmobilesolutions.asia/portal/images/bb/1d.png",
+        "description": "4. Pilih menu Blackberry ID ini"
+      },
+      {
+        "photo": "http://cl.amtrustmobilesolutions.asia/portal/images/bb/1e.png",
+        "description": "5. Saat masuk ke menu Blackberry ID, anda dapat membuat BBID baru (Buat Baru) atau anda dapat menggunakan BBID yang sebelumnya sudah anda miliki (Sign In). Kali ini pilih Buat Baru"
+      },
+      {
+        "photo": "http://cl.amtrustmobilesolutions.asia/portal/images/bb/1f.png",
+        "description": "6. Dihalaman berikutnya, anda akan diminta memasukkan nama depan dan nama belakang anda. Selain itu anda harus memasukkan alamat email yang akan digunakan sebagai Nama pengguna BBID"
+      }
+    ]
+  },
+  {
+    "type_id": "2",
+    "question": "Pendaftaran email / Email setup"
+  },
+  {
+    "type_id": "3",
+    "question": "Mengunduh, memasang dan copot pemasangan aplikasi / download, install and uninstall applications"
+  },
+  {
+    "type_id": "4",
+    "question": "Memindahkan file musik, foto dan video ke komputer / Transfer music, photos & videos to PC"
+  },
+  {
+    "type_id": "5",
+    "question": "Cadangkan data dengan Blackberry Link / Backing up data using Blackberry Link"
+  },
+  {
+    "type_id": "6",
+    "question": "Kinerja lambat - Check penyampaian / Slow performance - Check storage"
+  },
+  {
+    "type_id": "7",
+    "question": "Menghapus semu data / Reset all device data"
+  }
+]
+}

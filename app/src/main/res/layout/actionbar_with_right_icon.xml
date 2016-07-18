@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tool_bar"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@android:color/transparent">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Wrap_Content"
+        android:layout_centerInParent="true"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="true"
+        android:textSize="18sp"/>
+
+    <ImageView
+        android:id="@+id/menu_right"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_notification"
+        android:layout_marginRight="10dp"/>
+
+</RelativeLayout>

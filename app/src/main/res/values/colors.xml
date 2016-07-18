@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary_blue">#35629D</color>
+    <color name="colorPrimaryDark_blue">#35629D</color>
+    <color name="colorPrimary_blue_ripple">#CC35629D</color>
+    <color name="login_green">#6FB74B</color>
+    <color name="login_green_ripple">#CC6FB74B</color>
+    <color name="light_gray">#E2E2E2</color>
+    <color name="dark_gray">#696969</color>
+    <color name="medium_gray">#B2B2B2</color>
+    <color name="actionbar_blue">#35629D</color>
+    <color name="black">#000000</color>
+    <color name="tab_unselected">#485355</color>
+    <color name="green">#70B64A</color>
+    <color name="home_list_color">#5F5F5F</color>
+    <color name="control_background">#cc4285f4</color>
+</resources>

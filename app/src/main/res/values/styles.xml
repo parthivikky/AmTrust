@@ -1,0 +1,255 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme_White" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme_Blue" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary_blue</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_blue</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="Match_Parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Wrap_Content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Wrap_Width">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="Wrap_Height">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Weight_Width">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="Weight_Height">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="login_button_ripple" parent="@style/Wrap_Content">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:background">@drawable/login_bg</item>
+    </style>
+
+    <style name="login_button" parent="@style/Wrap_Height">
+        <item name="android:background">@drawable/login_bg</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="login_edittext_layout" parent="@style/Wrap_Height">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">50dp</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/login_edittext_bg</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="login_edittext" parent="@style/Wrap_Height">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColorHint">@color/medium_gray</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="login_edittext_icon" parent="@style/Wrap_Content">
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="register_edittext_layout" parent="@style/Wrap_Height">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/login_edittext_bg</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="tab_appearence" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="add_device_container" parent="Wrap_Height">
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <style name="add_device_header_text" parent="@style/Wrap_Content">
+        <item name="android:textColor">#656565</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_alignParentLeft">true</item>
+
+    </style>
+
+    <style name="switch_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="add_device_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">#E7E7E7</item>
+    </style>
+
+    <style name="add_device_answer" parent="@style/Wrap_Content">
+        <item name="android:textColor">#C2C2C2</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">35dp</item>
+    </style>
+
+    <style name="product_header" parent="Wrap_Content">
+        <item name="android:textColor">@color/colorPrimary_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">#EAEFF5</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:drawablePadding">5dp</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="product_name" parent="Wrap_Height">
+        <item name="android:textColor">@color/colorPrimary_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <style name="product_desc" parent="Wrap_Height">
+        <item name="android:textColor">#818181</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:text">The best solution is to pick a mobile phone insurance. Past few years have seen lot of companies offering smartphone insurance for your device.</item>
+        <item name="android:layout_marginRight">50dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+    </style>
+
+    <style name="profile_header_content" parent="Weight_Width">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="more_header" parent="Wrap_Height">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">30dp</item>
+        <item name="android:textColor">#97969C</item>
+        <item name="android:background">#F0EFF5</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="more_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:background">#D2D1D5</item>
+    </style>
+
+    <style name="more_content" parent="Wrap_Height">
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">#454545</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+    <style name="right_arrow_icon" parent="Wrap_Content">
+        <item name="android:text">{fa-angle-right}</item>
+        <item name="android:textColor">#CACACC</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="diagnostic_phone_details" parent="Wrap_Content">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="diagnostic_header" parent="Wrap_Height">
+        <item name="android:background">#E4EDF4</item>
+        <item name="android:textColor">#6B7276</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="auto_test_icon">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_margin">20dp</item>
+    </style>
+
+    <style name="auto_test_text" parent="Wrap_Content">
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textColor">#2D2D2D</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="auto_test_work" parent="Wrap_Content">
+        <item name="android:textColor">#8BC46F</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="ProgressHUD" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+</resources>

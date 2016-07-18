@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobello.amtrust.com.fragment.ScreenShotFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Take a screenshot by pressing the home and power buttons at the same time"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:padding="30dp"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="400dp"
+        android:src="@drawable/screenshot_mark"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

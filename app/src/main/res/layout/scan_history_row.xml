@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/history_container"
+        style="@style/Wrap_Height"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/scan_name"
+            style="@style/Wrap_Content"
+            android:text="Nexus 6 - Quick Scan"
+            android:textColor="#0C0C0C"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/scan_date"
+            style="@style/Wrap_Content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:text="27th May 2015"
+            android:textColor="#D9D9D9"
+            android:textSize="16sp" />
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/right_arrow_icon"
+            android:textSize="24sp" />
+
+    </RelativeLayout>
+
+    <View
+        style="@style/add_device_line"
+        android:layout_below="@+id/history_container"
+        android:layout_marginLeft="10dp"/>
+
+</RelativeLayout>

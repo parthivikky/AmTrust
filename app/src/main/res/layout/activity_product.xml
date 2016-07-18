@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobello.amtrust.com.activity.ProductActivity">
+
+    <include layout="@layout/actionbar" />
+
+    <ScrollView style="@style/Wrap_Content">
+
+        <LinearLayout
+            style="@style/Match_Parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                style="@style/Wrap_Height"
+                android:background="#EAEFF5">
+
+                <TextView
+                    style="@style/product_header"
+                    android:drawableLeft="@drawable/product_mobile"
+                    android:text="@string/phone" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="click">
+
+                <TextView
+                    android:id="@+id/product_name1"
+                    style="@style/product_name"
+                    android:text="Mobile Production Policy" />
+
+                <TextView
+                    android:id="@+id/product_desc1"
+                    style="@style/product_desc"
+                    android:layout_below="@+id/product_name1" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="40sp"/>
+
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="click">
+
+                <TextView
+                    android:id="@+id/product_name2"
+                    style="@style/product_name"
+                    android:text="Mobile Production Policy" />
+
+                <TextView
+                    android:id="@+id/product_desc2"
+                    style="@style/product_desc"
+                    android:layout_below="@+id/product_name2" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="40sp"/>
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                style="@style/Wrap_Height"
+                android:background="#EAEFF5">
+
+                <TextView
+                    style="@style/product_header"
+                    android:drawableLeft="@drawable/product_tablet"
+                    android:text="@string/tablet" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="click">
+
+                <TextView
+                    android:id="@+id/product_name3"
+                    style="@style/product_name"
+                    android:text="Tablet Production Policy" />
+
+                <TextView
+                    android:id="@+id/product_desc3"
+                    style="@style/product_desc"
+                    android:layout_below="@+id/product_name3" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="40sp"/>
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="click">
+
+                <TextView
+                    android:id="@+id/product_name4"
+                    style="@style/product_name"
+                    android:text="Tablet Production Policy" />
+
+                <TextView
+                    android:id="@+id/product_desc4"
+                    style="@style/product_desc"
+                    android:layout_below="@+id/product_name4" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="40sp"/>
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                style="@style/Wrap_Height"
+                android:background="#EAEFF5">
+
+                <TextView
+                    style="@style/product_header"
+                    android:text="@string/television"
+                    android:drawableLeft="@drawable/product_television"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="click">
+
+                <TextView
+                    android:id="@+id/product_name5"
+                    style="@style/product_name"
+                    android:text="Television Production Policy" />
+
+                <TextView
+                    android:id="@+id/product_desc5"
+                    style="@style/product_desc"
+                    android:layout_below="@+id/product_name5" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="40sp"/>
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:onClick="click">
+
+                <TextView
+                    android:id="@+id/product_name6"
+                    style="@style/product_name"
+                    android:text="Television Production Policy" />
+
+                <TextView
+                    android:id="@+id/product_desc6"
+                    style="@style/product_desc"
+                    android:layout_below="@+id/product_name6" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="40sp"/>
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

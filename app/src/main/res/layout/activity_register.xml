@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
+    tools:context="mobello.amtrust.com.activity.RegisterActivity">
+
+    <include android:id="@+id/action_bar"
+        layout="@layout/actionbar"/>
+
+    <LinearLayout
+        android:id="@+id/fname_container"
+        style="@style/register_edittext_layout"
+        android:layout_below="@+id/action_bar">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/login_edittext_icon"
+            android:layout_marginLeft="10dp"
+            android:text="{fa-user}" />
+
+        <EditText
+            android:id="@+id/fname"
+            style="@style/login_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/first_name"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lname_container"
+        style="@style/register_edittext_layout"
+        android:layout_below="@+id/fname_container">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/login_edittext_icon"
+            android:layout_marginLeft="10dp"
+            android:text="{fa-user}" />
+
+        <EditText
+            android:id="@+id/lname"
+            style="@style/login_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/last_name"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/address_container"
+        style="@style/register_edittext_layout"
+        android:layout_below="@+id/lname_container">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/login_edittext_icon"
+            android:layout_marginLeft="10dp"
+            android:text="{fa-location-arrow}" />
+
+        <EditText
+            android:id="@+id/address"
+            style="@style/login_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/address"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/city_container"
+        style="@style/register_edittext_layout"
+        android:layout_below="@+id/address_container">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/login_edittext_icon"
+            android:layout_marginLeft="10dp"
+            android:text="{fa-building-o}" />
+
+        <EditText
+            android:id="@+id/city"
+            style="@style/login_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/city"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/country_container"
+        style="@style/register_edittext_layout"
+        android:layout_below="@+id/city_container">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/login_edittext_icon"
+            android:layout_marginLeft="10dp"
+            android:text="{fa-globe}" />
+
+        <EditText
+            android:id="@+id/country"
+            style="@style/login_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/country"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/postal_container"
+        style="@style/register_edittext_layout"
+        android:layout_below="@+id/country_container">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            style="@style/login_edittext_icon"
+            android:layout_marginLeft="10dp"
+            android:text="{fa-location-arrow}" />
+
+        <EditText
+            android:id="@+id/postal"
+            style="@style/login_edittext"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="Postal Code"
+            android:inputType="text" />
+
+    </LinearLayout>
+
+    <com.andexert.library.RippleView
+        android:id="@+id/login_container"
+        style="@style/login_button_ripple"
+        android:layout_below="@+id/postal_container"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:rv_centered="true"
+        app:rv_color="@color/login_green_ripple"
+        app:rv_rippleDuration="500"
+        app:rv_type="simpleRipple"
+        app:rv_zoom="true"
+        app:rv_zoomDuration="100">
+
+        <TextView
+            android:id="@+id/submit"
+            style="@style/login_button"
+            android:text="@string/submit" />
+
+    </com.andexert.library.RippleView>
+
+</RelativeLayout>

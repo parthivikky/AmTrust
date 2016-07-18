@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">AMTrust</string>
+    <string name="login">Login</string>
+    <string name="login_page_quotes">COVERED.CONNECTED.CONFIDENT</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="password">Password</string>
+    <string name="email_address">Email Address</string>
+    <string name="email">Email</string>
+    <string name="imei_number">IMEI Number</string>
+    <string name="register">Register</string>
+    <string name="check">Check</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="submit">Submit</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="timeline">Timeline</string>
+    <string name="more">More</string>
+    <string name="my_device">MY DEVICE</string>
+    <string name="add_new_device">Add New Device</string>
+    <string name="choose">Choose</string>
+    <string name="device">DEVICE</string>
+    <string name="policy_management">POLICY MANAGEMENT</string>
+    <string name="phone">phone</string>
+    <string name="tablet">tablet</string>
+    <string name="television">television</string>
+    <string name="product">PRODUCT</string>
+    <string name="tech_support">Tech Support</string>
+    <string name="step">Steps</string>
+    <string name="logout">Logout</string>
+    <string name="scan_my_device">scan my device</string>
+    <string name="scan_history">scan history</string>
+    <string name="device_diagnosis">device diagnosis</string>
+    <string name="quick_scan">quick scan</string>
+    <string name="crash_report_message">Bug report captured on this page and details will send to server.</string>
+    <string name="country">Country</string>
+    <string name="continues">Continue</string>
+    <string name="device_health_check">device health check</string>
+    <string name="quick_check">Quick Check</string>
+    <string name="take_picture">Take Picture</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="picture">Picture</string>
+    <string name="description_info">Info</string>
+    <string name="request_permission">This sample needs camera permission.</string>
+    <string name="camera_error">This device doesn\'t support Camera2 API.</string>
+    <string name="intro_message">
+        <![CDATA[
+
+
+            This sample demonstrates the basic use of Camera2 API. Check the source code to see how
+            you can display camera preview and take pictures.
+
+
+        ]]>
+    </string>
+    <string name="start">Start</string>
+</resources>

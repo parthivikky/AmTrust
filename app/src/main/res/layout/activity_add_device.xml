@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobello.amtrust.com.activity.AddDeviceActivity">
+
+    <include layout="@layout/actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            style="@style/Match_Parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                style="@style/Wrap_Height"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:layout_marginTop="10dp"
+                    android:text="Add this device?" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/switch_add_this_device"
+                    style="@style/switch_button"
+                    android:layout_marginTop="20dp"
+                    app:kswBackColor="@color/switch_bg"
+                    app:kswTintColor="@color/colorPrimary" />
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <TextView
+                style="@style/Wrap_Height"
+                android:background="#EDEDED"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="20dp"
+                android:text="GENERAL INFO"
+                android:textColor="#434343"
+                android:textSize="17sp" />
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                android:id="@+id/category_container"
+                style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Category" />
+
+                <TextView
+                    android:id="@+id/category"
+                    style="@style/add_device_answer"
+                    android:text="Mobile" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="25sp" />
+
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Brand" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Product" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="IMEI Number" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#ECECEC" />
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout
+                style="@style/Wrap_Height"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:layout_marginTop="15dp"
+                    android:text="Device Protected with AMS?" />
+
+                <com.kyleduo.switchbutton.SwitchButton
+                    android:id="@+id/switch_device_protected"
+                    style="@style/switch_button"
+                    android:layout_marginTop="20dp"
+                    app:kswBackColor="@color/switch_bg"
+                    app:kswTintColor="@color/colorPrimary" />
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="#ECECEC" />
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Purchase Price" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Purchase Date" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Invoice Number" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <RelativeLayout style="@style/add_device_container">
+
+                <TextView
+                    style="@style/add_device_header_text"
+                    android:text="Policy Start Date" />
+
+            </RelativeLayout>
+
+            <View style="@style/add_device_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="#ECECEC" />
+
+            <View style="@style/add_device_line" />
+
+            <TextView
+                style="@style/Wrap_Height"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/submit"
+                android:textColor="@color/colorPrimary_blue"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View style="@style/add_device_line" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="#ECECEC" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

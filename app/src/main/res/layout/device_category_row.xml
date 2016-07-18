@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="10dp"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/Wrap_Content"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary_blue"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/desc"
+        style="@style/Wrap_Content"
+        android:textSize="12sp"
+        android:textColor="@color/medium_gray"
+        android:gravity="center"/>
+
+    <com.andexert.library.RippleView
+        style="@style/Wrap_Content"
+        android:layout_marginTop="20dp"
+        app:rv_centered="true"
+        app:rv_color="@color/login_green_ripple"
+        app:rv_rippleDuration="500"
+        app:rv_type="simpleRipple"
+        app:rv_zoom="true"
+        app:rv_zoomDuration="100">
+
+        <TextView
+            android:id="@+id/choose"
+            style="@style/Wrap_Content"
+            android:background="@drawable/login_bg"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingTop="5dp"
+            android:text="@string/choose"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+    </com.andexert.library.RippleView>
+
+</LinearLayout>

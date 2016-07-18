@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobello.amtrust.com.activity.DeviceDiagnosisActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/actionbar" />
+
+    <View
+        android:id="@+id/top_line"
+        style="@style/add_device_line"
+        android:layout_below="@+id/tool_bar"
+        android:background="#2A5792" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_line"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/phone_details_container"
+                style="@style/Wrap_Height"
+                android:background="@color/colorPrimary_blue">
+
+                <ImageView
+                    android:id="@+id/phone_image"
+                    android:layout_width="80dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:src="@drawable/nexus6" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/phone_image"
+                    android:layout_centerVertical="true">
+
+                    <TextView
+                        android:id="@+id/mobile_holder"
+                        style="@style/Wrap_Content"
+                        android:text="Joyce's Nexus"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/model"
+                        style="@style/diagnostic_phone_details"
+                        android:layout_below="@+id/mobile_holder"
+                        android:text="Nexus 6" />
+
+                    <TextView
+                        android:id="@+id/version"
+                        style="@style/diagnostic_phone_details"
+                        android:layout_below="@+id/model"
+                        android:text="6.0.2" />
+
+                    <TextView
+                        android:id="@+id/battery"
+                        style="@style/diagnostic_phone_details"
+                        android:layout_below="@+id/version"
+                        android:text="Battery Status - 100%" />
+
+                    <TextView
+                        android:id="@+id/memory"
+                        style="@style/diagnostic_phone_details"
+                        android:layout_below="@+id/battery"
+                        android:text="32GB" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/scan_device"
+                style="@style/diagnostic_header"
+                android:layout_below="@+id/phone_details_container"
+                android:text="@string/scan_my_device" />
+
+            <RelativeLayout
+                android:id="@+id/quick_scan_container"
+                style="@style/Wrap_Content"
+                android:layout_below="@id/scan_device"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:onClick="quickScan">
+
+                <ImageView
+                    android:id="@+id/img_quick_scan"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_quick_scan" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/img_quick_scan">
+
+                    <TextView
+                        android:id="@+id/txt_quick_scan"
+                        style="@style/Wrap_Content"
+                        android:text="Quick Scan"
+                        android:textColor="@color/colorPrimary_blue"
+                        android:textSize="16sp" />
+
+                    <com.joanzapata.iconify.widget.IconTextView
+                        style="@style/right_arrow_icon"
+                        android:textSize="25sp" />
+
+                </RelativeLayout>
+
+                <View
+                    style="@style/add_device_line"
+                    android:layout_below="@+id/img_quick_scan"
+                    android:layout_toRightOf="@+id/img_quick_scan" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/full_scan_container"
+                style="@style/Wrap_Content"
+                android:layout_below="@id/quick_scan_container"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/img_full_scan"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_full_scan" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/img_full_scan">
+
+                    <TextView
+                        android:id="@+id/txt_full_scan"
+                        style="@style/Wrap_Content"
+                        android:text="Full Scan"
+                        android:textColor="@color/colorPrimary_blue"
+                        android:textSize="16sp" />
+
+                    <com.joanzapata.iconify.widget.IconTextView
+                        style="@style/right_arrow_icon"
+                        android:textSize="25sp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/scan_history"
+                style="@style/diagnostic_header"
+                android:layout_below="@+id/full_scan_container"
+                android:text="@string/scan_history" />
+
+            <LinearLayout
+                android:id="@+id/scan_history_container"
+                style="@style/Wrap_Height"
+                android:layout_below="@id/scan_history"
+                android:orientation="vertical" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

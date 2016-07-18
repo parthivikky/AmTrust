@@ -1,0 +1,226 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none"
+    tools:context="mobello.amtrust.com.fragment.MoreFragment">
+
+    <LinearLayout
+        style="@style/Match_Parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#F0EFF5" />
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                android:id="@+id/change_password"
+                style="@style/more_content"
+                android:text="Change Password" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <!--<View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#F0EFF5" />-->
+
+        <TextView
+            style="@style/more_header"
+            android:text="invite friends" />
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                style="@style/more_content"
+                android:text="Invite friends via SMS" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                style="@style/more_content"
+                android:text="Invite friends via Email" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+
+            <TextView
+                style="@style/more_content"
+                android:text="Invite friends via Friends" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            style="@style/more_header"
+            android:text="general info" />
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                style="@style/more_content"
+                android:text="About App" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+
+            <TextView
+                style="@style/more_content"
+                android:text="Privacy Policy" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                style="@style/more_content"
+                android:text="Terms of Use" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                style="@style/right_arrow_icon"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                style="@style/more_content"
+                android:clickable="false"
+                android:text="Version" />
+
+            <TextView
+                android:id="@+id/version"
+                style="@style/Wrap_Content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="10dp"
+                android:text="Version"
+                android:textColor="#B0B0B1"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout style="@style/Wrap_Content">
+
+            <TextView
+                style="@style/more_content"
+                android:clickable="false"
+                android:text="Build" />
+
+            <TextView
+                android:id="@+id/build"
+                style="@style/Wrap_Content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:paddingRight="10dp"
+                android:text="Version"
+                android:textColor="#B0B0B1"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#F0EFF5" />
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <TextView
+            android:id="@+id/logout"
+            style="@style/Wrap_Height"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/logout"
+            android:textColor="#BE6761"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            style="@style/more_line"
+            android:layout_marginLeft="0dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#F0EFF5" />
+
+    </LinearLayout>
+
+</ScrollView>

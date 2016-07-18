@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include layout="@layout/actionbar" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_device_empty" />
+
+    <TextView
+        style="@style/Wrap_Content"
+        android:layout_marginTop="20dp"
+        android:text="No Devices Added"
+        android:textColor="@color/dark_gray"
+        android:textSize="18sp" />
+
+    <TextView
+        style="@style/Wrap_Height"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:text="Why don't you add your devices so that you can see what policies you are eligible for?"
+        android:textColor="@color/medium_gray"
+        android:textSize="14sp" />
+
+    <com.andexert.library.RippleView
+        style="@style/Wrap_Content"
+        android:layout_marginTop="20dp"
+        app:rv_centered="true"
+        app:rv_color="@color/login_green_ripple"
+        app:rv_rippleDuration="500"
+        app:rv_type="simpleRipple"
+        app:rv_zoom="true"
+        app:rv_zoomDuration="100">
+
+        <TextView
+            android:id="@+id/add_device"
+            style="@style/Wrap_Content"
+            android:background="@drawable/button_primary_blue"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="10dp"
+            android:text="@string/add_new_device"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+    </com.andexert.library.RippleView>
+
+
+</LinearLayout>

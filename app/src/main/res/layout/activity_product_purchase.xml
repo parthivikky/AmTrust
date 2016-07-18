@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobello.amtrust.com.activity.ProductPurchaseActivity">
+
+    <include
+        android:id="@+id/tool_bar"
+        layout="@layout/actionbar" />
+
+    <ScrollView
+        style="@style/Match_Parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/tool_bar">
+
+        <LinearLayout
+            style="@style/Match_Parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/product_name"
+                android:text="Mobile Production Policy" />
+
+            <TextView
+                style="@style/product_desc"
+                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem " />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        style="@style/Wrap_Height"
+        android:layout_alignParentBottom="true"
+        android:background="#E5E5E5"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="60dp"
+        android:paddingRight="60dp">
+
+    <TextView
+        style="@style/login_button"
+        android:text="Purchase"
+        />
+
+    </LinearLayout>
+
+</RelativeLayout>

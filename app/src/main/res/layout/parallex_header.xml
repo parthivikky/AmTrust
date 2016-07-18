@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout style="@style/Weight_Height">
+
+        <mobello.amtrust.com.widget.BlurredImageView
+            android:id="@+id/header_profile_image"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_default_height"
+            app:keepOriginal="true" />
+
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="#1A000000"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <mobello.amtrust.com.widget.SelectableRoundedImageView
+                android:id="@+id/img_profile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                app:sriv_oval="true" />
+
+            <TextView
+                android:id="@+id/txt_profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary_blue"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/profile_header_content"
+            android:drawableTop="@drawable/ic_device_white"
+            android:text="3 Devices" />
+
+        <TextView
+            style="@style/profile_header_content"
+            android:drawableTop="@drawable/ic_policy_white"
+            android:text="25 Policies" />
+
+        <TextView
+            style="@style/profile_header_content"
+            android:drawableTop="@drawable/ic_diagnosis_white"
+            android:text="5 Diagnosis" />
+
+    </LinearLayout>
+
+</LinearLayout>

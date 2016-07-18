@@ -1,0 +1,55 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        applicationId "mobello.amtrust.com"
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 6
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.4'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
+    compile 'me.grantland:autofittextview:0.2.+'
+    compile 'com.github.emanzanoaxa:RippleEffect:52ea2a0ab6'
+    compile 'com.joanzapata.iconify:android-iconify-fontawesome:2.2.2'
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.github.orangegangsters:swipy:1.2.2@aar'
+    compile 'com.kyleduo.switchbutton:library:1.4.0'
+    compile 'com.github.nirhart:parallaxscroll:1.0'
+    compile 'com.github.michaelye.easydialog:easydialog:1.4'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.flyco.pageindicator:FlycoPageIndicator_Lib:1.0.0@aar'
+    compile 'ch.acra:acra:4.7.0'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.google.android.gms:play-services:9.2.1'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:support-v13:24.0.0'
+    compile 'me.aflak.libraries:ezcam:1.0'
+}

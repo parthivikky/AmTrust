@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/policy_name"
+        style="@style/Wrap_Height"
+        android:text="Policy Name"
+        android:textColor="@color/colorPrimary_blue"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/product"
+        style="@style/Wrap_Content"
+        android:layout_below="@+id/policy_name"
+        android:layout_marginTop="15dp"
+        android:text="mobile"
+        android:textColor="#818181"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/bought_date"
+        style="@style/Wrap_Content"
+        android:layout_below="@+id/product"
+        android:layout_marginTop="5dp"
+        android:text="bought"
+        android:textColor="#818181"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/expire_date"
+        style="@style/Wrap_Content"
+        android:layout_below="@+id/bought_date"
+        android:layout_marginTop="5dp"
+        android:text="Expire"
+        android:textColor="#818181"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/annually"
+        style="@style/Wrap_Content"
+        android:layout_below="@+id/policy_name"
+        android:layout_marginTop="15dp"
+        android:text="annually"
+        android:textColor="#D0996B"
+        android:textSize="14sp"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:id="@+id/monthly"
+        style="@style/Wrap_Content"
+        android:layout_below="@+id/annually"
+        android:layout_marginTop="5dp"
+        android:text="monthly"
+        android:textColor="@color/colorPrimary_blue"
+        android:textSize="14sp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
