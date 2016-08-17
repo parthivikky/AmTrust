@@ -68,7 +68,7 @@ public class DeviceCategoryAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if (!isRequest)
-                    AddDeviceActivity.start(context, names[position]);
+                    AddDeviceActivity.start(context);
                 else {
                     context.setResult(Activity.RESULT_OK,new Intent().putExtra("category",names[position]));
                     context.finish();

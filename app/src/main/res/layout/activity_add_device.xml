@@ -62,7 +62,7 @@
                 <TextView
                     android:id="@+id/category"
                     style="@style/add_device_answer"
-                    android:text="Mobile" />
+                    android:text="" />
 
                 <com.joanzapata.iconify.widget.IconTextView
                     style="@style/right_arrow_icon"
@@ -73,12 +73,19 @@
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/brand_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="Brand" />
 
+                <TextView
+                    android:id="@+id/brand"
+                    style="@style/add_device_answer"
+                    android:text="" />
+
                 <com.joanzapata.iconify.widget.IconTextView
                     style="@style/right_arrow_icon"
                     android:textSize="25sp" />
@@ -87,12 +94,19 @@
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/product_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="Product" />
 
+                <TextView
+                    android:id="@+id/product"
+                    style="@style/add_device_answer"
+                    android:text="" />
+
                 <com.joanzapata.iconify.widget.IconTextView
                     style="@style/right_arrow_icon"
                     android:textSize="25sp" />
@@ -101,11 +115,17 @@
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/imei_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="IMEI Number" />
+
+                <EditText
+                    android:id="@+id/imei"
+                    style="@style/add_device_edittext" />
 
             </RelativeLayout>
 
@@ -145,41 +165,66 @@
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/price_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="Purchase Price" />
 
+                <EditText
+                    android:id="@+id/price"
+                    style="@style/add_device_edittext" />
+
+
             </RelativeLayout>
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/purchase_date_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="Purchase Date" />
 
+                <EditText
+                    android:id="@+id/purchase_date"
+                    style="@style/add_device_edittext" />
+
             </RelativeLayout>
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/invoice_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="Invoice Number" />
 
+                <EditText
+                    android:id="@+id/invoice"
+                    style="@style/add_device_edittext" />
+
             </RelativeLayout>
 
             <View style="@style/add_device_line" />
 
-            <RelativeLayout style="@style/add_device_container">
+            <RelativeLayout
+                android:id="@+id/start_date_container"
+                style="@style/add_device_container">
 
                 <TextView
                     style="@style/add_device_header_text"
                     android:text="Policy Start Date" />
+
+                <EditText
+                    android:id="@+id/start_date"
+                    style="@style/add_device_edittext" />
 
             </RelativeLayout>
 

@@ -20,6 +20,8 @@ public class WebConstant {
     public static final String  CUSTOMER_LOGIN = "ams.login";
     public static final String  CUSTOMER_LOGOUT = "ams.logout";
     public static final String  FORGET_PASSWORD = "ams.forgetpwd";
+    public static final String  PROFILE_DETAIL = "ams.profile_detail";
+    public static final String  PROFILE_UPDATE = "ams.update_profile";
 
     public static final String  AMS_COUNTRY_MODULE = "AmsCountry";
     public static final String  CONTACTS_MODULE = "Contacts";

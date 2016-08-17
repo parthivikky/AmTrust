@@ -1,12 +1,24 @@
 package mobello.amtrust.com.activity;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
+import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.VideoView;
+
+import java.io.IOException;
 
 import mobello.amtrust.com.R;
 import mobello.amtrust.com.model.GetChallenge;
@@ -20,31 +32,50 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, SurfaceHolder.Callback, MediaPlayer.OnCompletionListener {
 
     private static final int LOGIN_REQUEST_CODE = 1;
 
     private TextView login, register;
-    private String token;
+    private SurfaceView surfaceView;
+    private SurfaceHolder surfaceHolder;
+    private MediaPlayer mediaPlayer;
+    private String token,targetUri;
 
     public static void start(Activity activity){
         activity.startActivity(new Intent(activity,MainActivity.class));
+        StringBuffer buffer = new StringBuffer("Game Plan");
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
+
         initViews();
         getChallengeToken();
+        targetUri = "android.resource://" + getPackageName() + "/" + R.raw.welcome_video;
+
+        try {
+            mediaPlayer.setDataSource(getApplicationContext(), Uri.parse(targetUri));
+            mediaPlayer.prepare();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        mediaPlayer.start();
     }
 
     private void initViews() {
+        surfaceView = _findViewById(R.id.video_view);
         login = _findViewById(R.id.login);
         register = _findViewById(R.id.register);
         login.setOnClickListener(this);
         register.setOnClickListener(this);
-
+        surfaceHolder = surfaceView.getHolder();
+        surfaceHolder.addCallback(this);
+        mediaPlayer = new MediaPlayer();
+        mediaPlayer.setOnCompletionListener(this);
     }
 
     private void getChallengeToken() {
@@ -95,7 +126,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-
     public <T extends View> T _findViewById(int viewId) {
         return (T) findViewById(viewId);
     }
@@ -117,5 +147,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == LOGIN_REQUEST_CODE && resultCode == RESULT_OK)
             finish();
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder surfaceHolder) {
+        mediaPlayer.setDisplay(surfaceHolder);
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(!mediaPlayer.isPlaying())
+            mediaPlayer.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(mediaPlayer.isPlaying())
+            mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mediaPlayer.release();
+    }
+
+    @Override
+    public void onCompletion(MediaPlayer mediaPlayer) {
+        mediaPlayer.start();
     }
 }

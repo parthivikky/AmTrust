@@ -17,23 +17,27 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.io.File;
 
 import mobello.amtrust.com.R;
+import mobello.amtrust.com.utility.DBHelper;
 import mobello.amtrust.com.utility.FileTracker;
 
 
 public class ScreenShotFragment extends Fragment {
 
     private View rootView;
+    private TextView skip;
     private ContentObserver contentObserver;
+    private DBHelper dbHelper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_screen_shot, container, false);
-
+        dbHelper = DBHelper.getInstance();
         HandlerThread handlerThread = new HandlerThread("content_observer");
         handlerThread.start();
         final Handler handler = new Handler(handlerThread.getLooper()) {
@@ -42,29 +46,36 @@ public class ScreenShotFragment extends Fragment {
                 super.handleMessage(msg);
             }
         };
-        final String TAG = "screent shot";
+
         contentObserver = new ContentObserver(handler) {
             @Override
             public boolean deliverSelfNotifications() {
-                Log.d(TAG, "deliverSelfNotifications");
                 return super.deliverSelfNotifications();
             }
 
             @Override
             public void onChange(boolean selfChange, Uri uri) {
-                Log.d(TAG, "onChange " + uri.toString());
-//                if (uri.toString().matches(MediaStore.Images.Media.EXTERNAL_CONTENT_URI.toString() + "/[0-9]+")) {
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
                             ((SemiAutomaticTestingFragment) getParentFragment()).showTick();
                             int currentItem = ((SemiAutomaticTestingFragment) getParentFragment()).getPagerCurrentPosition();
                             ((SemiAutomaticTestingFragment) getParentFragment()).moveToNextPage(currentItem);
+                            dbHelper.quickScanFeatures("Screen Shot", 1);
                         }
                     });
                     getActivity().getContentResolver().unregisterContentObserver(contentObserver);
             }
         };
+
+        rootView.findViewById(R.id.skip).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dbHelper.quickScanFeatures("Screen Shot",0);
+                int currentItem = ((SemiAutomaticTestingFragment)getParentFragment()).getPagerCurrentPosition();
+                ((SemiAutomaticTestingFragment)getParentFragment()).moveToNextPage(currentItem);
+            }
+        });
 
         return rootView;
     }

@@ -20,4 +20,16 @@
         android:src="@drawable/screenshot_mark"
         android:layout_centerInParent="true"/>
 
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip Test"
+        android:textColor="#555555"
+        android:layout_margin="30dp"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+
+
 </RelativeLayout>

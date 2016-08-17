@@ -1,9 +1,11 @@
 package mobello.amtrust.com.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,6 +46,7 @@ public class SemiAutomaticTestingFragment extends Fragment {
 
         adapter = new SemiAutomaticPagerAdapter(getChildFragmentManager());
         viewPager.setOffscreenPageLimit(4);
+        viewPager.setPagingEnabled(false);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
         setTabIcons();
@@ -93,5 +96,13 @@ public class SemiAutomaticTestingFragment extends Fragment {
                 tickContainer.setVisibility(View.GONE);
             }
         }, 2000);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        for (Fragment fragment : getChildFragmentManager().getFragments()) {
+            fragment.onActivityResult(requestCode, resultCode, data);
+        }
     }
 }

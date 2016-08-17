@@ -132,6 +132,8 @@ public class Camera2BasicFragment extends Fragment
      */
     private static final int MAX_PREVIEW_HEIGHT = 1080;
 
+    private static int PREVERT_CAMERA;
+
     /**
      * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a
      * {@link TextureView}.
@@ -157,6 +159,7 @@ public class Camera2BasicFragment extends Fragment
         @Override
         public void onSurfaceTextureUpdated(SurfaceTexture texture) {
         }
+
     };
 
     /**
@@ -214,7 +217,6 @@ public class Camera2BasicFragment extends Fragment
                 activity.finish();
             }
         }
-
     };
 
     /**
@@ -297,6 +299,7 @@ public class Camera2BasicFragment extends Fragment
                 }
                 case STATE_WAITING_LOCK: {
                     Integer afState = result.get(CaptureResult.CONTROL_AF_STATE);
+                    Log.i("afState", "" + afState);
                     if (afState == null) {
                         captureStillPicture();
                     } else if (CaptureResult.CONTROL_AF_STATE_FOCUSED_LOCKED == afState ||
@@ -346,6 +349,7 @@ public class Camera2BasicFragment extends Fragment
         public void onCaptureCompleted(@NonNull CameraCaptureSession session,
                                        @NonNull CaptureRequest request,
                                        @NonNull TotalCaptureResult result) {
+            Log.i("capture","completed");
             process(result);
         }
 
@@ -417,8 +421,12 @@ public class Camera2BasicFragment extends Fragment
         }
     }
 
-    public static Camera2BasicFragment newInstance() {
-        return new Camera2BasicFragment();
+    public static Camera2BasicFragment newInstance(int prevent_camera) {
+        Camera2BasicFragment fragment = new Camera2BasicFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("prevent_camera",prevent_camera);
+        fragment.setArguments(bundle);
+        return fragment;
     }
 
     @Override
@@ -437,6 +445,7 @@ public class Camera2BasicFragment extends Fragment
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        PREVERT_CAMERA = getArguments().getInt("prevent_camera");
         mFile = new File(getActivity().getExternalFilesDir(null), "pic.jpg");
     }
 
@@ -501,7 +510,7 @@ public class Camera2BasicFragment extends Fragment
 
                 // We don't use a front facing camera in this sample.
                 Integer facing = characteristics.get(CameraCharacteristics.LENS_FACING);
-                if (facing != null && facing == CameraCharacteristics.LENS_FACING_BACK) {
+                if (facing != null && facing == PREVERT_CAMERA) {
                     continue;
                 }
 
@@ -776,17 +785,18 @@ public class Camera2BasicFragment extends Fragment
      * Lock the focus as the first step for a still image capture.
      */
     private void lockFocus() {
-        try {
+//        try {
             // This is how to tell the camera to lock focus.
             mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,
                     CameraMetadata.CONTROL_AF_TRIGGER_START);
             // Tell #mCaptureCallback to wait for the lock.
             mState = STATE_WAITING_LOCK;
-            mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
-                    mBackgroundHandler);
-        } catch (CameraAccessException e) {
+            /*mCaptureSession.capture(mPreviewRequestBuilder.build(), mCaptureCallback,
+                    mBackgroundHandler);*/
+            captureStillPicture();
+        /*}catch (CameraAccessException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     /**
@@ -845,7 +855,6 @@ public class Camera2BasicFragment extends Fragment
             };
 
             mCaptureSession.stopRepeating();
-            mCaptureSession.abortCaptures();
             mCaptureSession.capture(captureBuilder.build(), CaptureCallback, null);
             getActivity().setResult(Activity.RESULT_OK,new Intent().putExtra("path",mFile.toString()));
             getActivity().finish();

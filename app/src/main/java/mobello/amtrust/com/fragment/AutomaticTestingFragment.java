@@ -59,67 +59,31 @@ import java.util.TimerTask;
 
 import mobello.amtrust.com.R;
 import mobello.amtrust.com.activity.QuickScanActivity;
+import mobello.amtrust.com.utility.DBHelper;
 import mobello.amtrust.com.utility.Version;
 
 public class AutomaticTestingFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+
     private static final int BLUETOOTH_REQUEST = 0;
     private static final int GPS_REQUEST = 1;
     private static final int REQUEST_LOCATION = 2;
 
     // Request code to use when launching the resolution activity
-    private static final int REQUEST_RESOLVE_ERROR = 1001;
+    private static final int REQUEST_RESOLVE_ERROR = 3;
     // Unique tag for the error dialog fragment
     private static final String DIALOG_ERROR = "dialog_error";
     // Bool to track whether the app is already resolving an error
     private boolean mResolvingError = false;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private View rootView;
+       private View rootView;
     private TextView continues, txtWifiState, txtDataState, txtBluetoothState, txtBatteryState, txtAccelerometerState, txtGPSState;
     private ImageView imgWifi, imgData, imgBluetooth, imgBattery, imgAccelerometer, imgGPS;
 
     private GoogleApiClient googleApiClient;
+    private DBHelper dbHelper;
 
     private IntentFilter batteryFilter, batteryTempFilter;
     private BroadcastReceiver batteryReceiver, batteryTempReceiver;
-
-    public AutomaticTestingFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AutomaticTestingFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AutomaticTestingFragment newInstance(String param1, String param2) {
-        AutomaticTestingFragment fragment = new AutomaticTestingFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -140,10 +104,11 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
 
         if (Version.isBelowLollipop())
             setMobileState();
-        else
+        else {
             imgData.setImageResource(R.drawable.ic_data_red);
+            dbHelper.quickScanFeatures("Data Connection",0);
+        }
 //            setMobileDataEnableAfterLollipop();
-
 
         setBluetoothState();
 
@@ -185,6 +150,7 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
         imgBattery = _findViewById(R.id.ic_battery);
         imgAccelerometer = _findViewById(R.id.ic_accelerometer);
         imgGPS = _findViewById(R.id.ic_gps);
+        dbHelper = DBHelper.getInstance();
     }
 
     private void setWifiState() {
@@ -194,10 +160,12 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
             @Override
             public void run() {
                 if (wifiManager.isWifiEnabled()) {
+                    dbHelper.quickScanFeatures("Wifi",1);
                     imgWifi.setImageResource(R.drawable.ic_wifi_green);
                     txtWifiState.setVisibility(View.VISIBLE);
                 } else {
                     imgWifi.setImageResource(R.drawable.ic_wifi_red);
+                    dbHelper.quickScanFeatures("Wifi",0);
                 }
             }
         }, 1000);
@@ -313,8 +281,10 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
                 setMobileDataEnabledMethod.invoke(iConnectivityManager, true);
                 imgData.setImageResource(R.drawable.ic_data_green);
                 txtDataState.setVisibility(View.VISIBLE);
+                dbHelper.quickScanFeatures("Data Connection",1);
             } else {
                 imgData.setImageResource(R.drawable.ic_data_red);
+                dbHelper.quickScanFeatures("Data Connection",0);
             }
         } catch (IllegalAccessException e) {
             e.printStackTrace();
@@ -334,6 +304,7 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
         if (bluetoothAdapter.isEnabled()) {
             imgBluetooth.setImageResource(R.drawable.ic_bluetooth_green);
             txtBluetoothState.setVisibility(View.VISIBLE);
+            dbHelper.quickScanFeatures("Bluetooth",1);
         } else {
             startActivityForResult(new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE), BLUETOOTH_REQUEST);
         }
@@ -374,8 +345,10 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
         if (isEnabled) {
             imgGPS.setImageResource(R.drawable.ic_gps_green);
             txtGPSState.setVisibility(View.VISIBLE);
+            dbHelper.quickScanFeatures("GPS",1);
         } else {
             imgGPS.setImageResource(R.drawable.ic_gps_red);
+            dbHelper.quickScanFeatures("GPS",0);
         }
     }
 
@@ -384,8 +357,10 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
         if(sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE) != null){
             imgAccelerometer.setImageResource(R.drawable.ic_speedometer_green);
             txtAccelerometerState.setVisibility(View.VISIBLE);
+            dbHelper.quickScanFeatures("GyroScope",1);
         }else{
             imgAccelerometer.setImageResource(R.drawable.ic_speedometer_red);
+            dbHelper.quickScanFeatures("GyroScope",0);
         }
     }
 
@@ -397,6 +372,7 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
                 case BLUETOOTH_REQUEST:
                     imgBluetooth.setImageResource(R.drawable.ic_bluetooth_green);
                     txtBluetoothState.setVisibility(View.VISIBLE);
+                    dbHelper.quickScanFeatures("Bluetooth",1);
                     break;
                 case GPS_REQUEST:
                     if (isGPSEnabled()) {
@@ -441,8 +417,10 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
                         if (status == BatteryManager.BATTERY_HEALTH_GOOD){
                             imgBattery.setImageResource(R.drawable.ic_battery_green);
                             txtBatteryState.setVisibility(View.VISIBLE);
+                            dbHelper.quickScanFeatures("Battery",1);
                         }else {
                             imgBattery.setImageResource(R.drawable.ic_battery_red);
+                            dbHelper.quickScanFeatures("Battery",0);
                         }
 
                         getActivity().unregisterReceiver(batteryTempReceiver);
@@ -597,5 +575,4 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
             onDialogDismissed();
         }
     }
-
 }

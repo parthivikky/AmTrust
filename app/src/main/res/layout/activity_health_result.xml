@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobello.amtrust.com.activity.HealthResultActivity">
+
+    <include
+        android:id="@+id/action_bar"
+        layout="@layout/actionbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/more_header"
+                android:text="@string/health_summary" />
+
+            <View
+                style="@style/more_line"
+                android:layout_marginLeft="0dp" />
+
+            <com.shinelw.library.ColorArcProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/action_bar"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="50dp"
+                android:layout_marginTop="50dp"
+                app:back_color="@android:color/darker_gray"
+                app:back_width="25dp"
+                app:front_color1="@color/colorAccent"
+                app:front_width="23dp"
+                app:is_need_content="true"
+                app:is_need_unit="true"
+                app:max_value="11"
+                app:string_unit="11 Features"
+                app:total_engle="270" />
+
+            <View
+                style="@style/more_line"
+                android:layout_marginLeft="0dp" />
+
+            <RelativeLayout
+                android:id="@+id/testing_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Show Detailed Testing Result"
+                    android:textColor="#335789"
+                    android:textSize="18sp" />
+
+                <com.joanzapata.iconify.widget.IconTextView
+                    style="@style/right_arrow_icon"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+
+            <View
+                style="@style/more_line"
+                android:layout_marginLeft="0dp" />
+
+            <TextView
+                style="@style/more_header"
+                android:text="@string/buy_back_offer" />
+
+            <View
+                style="@style/more_line"
+                android:layout_marginLeft="0dp" />
+
+
+            <LinearLayout
+                android:id="@+id/retailer_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobello.amtrust.com.activity.ProtectionPlansActivity">
+
+    <include layout="@layout/actionbar" />
+
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:horizontalSpacing="15dp"
+        android:verticalSpacing="15dp"
+        android:gravity="center_horizontal"
+        android:background="#F1F0F8"
+        android:padding="15dp"
+        android:stretchMode="columnWidth"
+        android:scrollbars="none"/>
+
+</LinearLayout>

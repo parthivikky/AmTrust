@@ -51,5 +51,14 @@
 
     </RelativeLayout>
 
+    <TextView
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip Test"
+        android:textColor="#555555"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="30dp"
+        android:textSize="18sp"/>
 
 </FrameLayout>

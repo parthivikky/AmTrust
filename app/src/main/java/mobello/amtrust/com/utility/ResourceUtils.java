@@ -1,8 +1,11 @@
 package mobello.amtrust.com.utility;
 
+import android.content.Context;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.content.ContextCompatApi24;
 import android.util.TypedValue;
 
 import mobello.amtrust.com.R;
@@ -28,5 +31,13 @@ public class ResourceUtils {
         if (AmTrustApp.getInstance().getTheme().resolveAttribute(R.attr.selectableItemBackground, typedValue, true))
             return typedValue.data;
         return Color.TRANSPARENT;
+    }
+
+    public static Drawable getDrawble(Context context, int resId){
+        if(!Version.isBelowLollipop()){
+            return context.getResources().getDrawable(R.drawable.placeholder);
+        }else{
+            return context.getDrawable(R.drawable.placeholder);
+        }
     }
 }

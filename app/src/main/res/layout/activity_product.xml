@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="mobello.amtrust.com.activity.ProductActivity">
+    tools:context=".activity.AllPlansActivity">
 
     <include layout="@layout/actionbar" />
 

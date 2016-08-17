@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+
 import mobello.amtrust.com.R;
 
 /**
@@ -14,19 +17,22 @@ import mobello.amtrust.com.R;
  */
 public class ProfileParallexAdapter extends BaseAdapter {
 
-    private String[] headers = {"Name","Email","Address","City","Country","Postal Code"};
-    private String[] values = {"Steve Jobs","steve@apple.com","402 Parkan Street","Kuala Lumpur","Malaysia","382938"};
-
+    private LinkedHashMap<String,String> linkedHashMap;
     private Context context;
     private ViewHolder holder;
+    private ArrayList<String> keys;
+    private ArrayList<String> values;
 
-    public ProfileParallexAdapter(Context context){
+    public ProfileParallexAdapter(Context context, LinkedHashMap<String,String> linkedHashMap){
         this.context = context;
+        this.linkedHashMap = linkedHashMap;
+        keys = new ArrayList<>(linkedHashMap.keySet());
+        values = new ArrayList<>(linkedHashMap.values());
     }
 
     @Override
     public int getCount() {
-        return headers.length;
+        return linkedHashMap.size();
     }
 
     @Override
@@ -48,14 +54,21 @@ public class ProfileParallexAdapter extends BaseAdapter {
         }else{
             view = convertView;
         }
+
         holder.header = (TextView)view.findViewById(R.id.header);
         holder.content = (TextView)view.findViewById(R.id.content);
-        holder.header.setText(headers[position]);
-        holder.content.setText(values[position]);
+        holder.header.setText(keys.get(position));
+        holder.content.setText(values.get(position));
         return view;
     }
 
     public class ViewHolder{
         TextView header, content;
+    }
+
+    public void insert(LinkedHashMap<String,String> linkedHashMap){
+        keys = new ArrayList<>(linkedHashMap.keySet());
+        values = new ArrayList<>(linkedHashMap.values());
+        notifyDataSetChanged();
     }
 }

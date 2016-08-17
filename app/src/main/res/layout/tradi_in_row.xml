@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#EFEFF4"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:background="@drawable/tradin_row_bg"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="75dp"
+            android:layout_height="75dp" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/icon"
+            android:text="name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:minTextSize="8sp" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/icon"
+            android:text="location"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:minTextSize="8sp" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/location"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/icon"
+            android:text="price"
+            android:textColor="#FF6E0D"
+            android:textSize="18sp"
+            app:minTextSize="8sp" />
+
+    </RelativeLayout>
+
+    <com.joanzapata.iconify.widget.IconTextView
+        style="@style/right_arrow_icon"
+        android:layout_gravity="center_vertical"
+        android:textSize="30sp" />
+
+
+</LinearLayout>

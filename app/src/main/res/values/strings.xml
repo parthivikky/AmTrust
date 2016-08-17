@@ -27,6 +27,7 @@
     <string name="choose">Choose</string>
     <string name="device">DEVICE</string>
     <string name="policy_management">POLICY MANAGEMENT</string>
+    <string name="my_policy">MY POLICY</string>
     <string name="phone">phone</string>
     <string name="tablet">tablet</string>
     <string name="television">television</string>
@@ -60,4 +61,8 @@
         ]]>
     </string>
     <string name="start">Start</string>
+    <string name="health_check_result">Health Check Result</string>
+    <string name="health_summary">health summary</string>
+    <string name="buy_back_offer">buy back offer</string>
+    <string name="summary">Summary</string>
 </resources>

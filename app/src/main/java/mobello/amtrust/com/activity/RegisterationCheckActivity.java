@@ -124,9 +124,7 @@ public class RegisterationCheckActivity extends AppCompatActivity implements Vie
                 public void onResponse(Call<UserExist> call, Response<UserExist> response) {
                     Helper.dismissProgress();
                     UserExist userExist = response.body();
-                    Log.i("response", userExist.getSuccess() + "");
-                    Log.i("message", userExist.getResult().getMessage() + "");
-                    Toast.makeText(RegisterationCheckActivity.this, userExist.getResult().getMessage(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterationCheckActivity.this,userExist.getResult().getMessage(), Toast.LENGTH_LONG).show();
                     if (userExist.getResult().getIsExistUser() == 0) {
                         Bundle bundle = new Bundle();
                         bundle.putString("email", etEmail.getText().toString());
@@ -173,7 +171,6 @@ public class RegisterationCheckActivity extends AppCompatActivity implements Vie
                 .setMarginLeftAndRight(24, 24)
                 .setOutsideColor(Color.parseColor("#80000000"))
                 .show();
-
     }
 
     @Override
@@ -183,6 +180,5 @@ public class RegisterationCheckActivity extends AppCompatActivity implements Vie
             setResult(RESULT_OK);
             finish();
         }
-
     }
 }

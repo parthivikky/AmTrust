@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()){
             case R.id.login:
                 login();
+//                HomeActivity.start(LoginActivity.this);
                 break;
             case R.id.forgot_password:
                 ForgotPasswordActivity.start(LoginActivity.this);
@@ -64,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void login(){
-        Helper.showProgress(this);
+
         if(TextUtils.isEmpty(etEmail.getText().toString())){
             Toast.makeText(LoginActivity.this, "Please enter the E-Mail address", Toast.LENGTH_LONG).show();
         }else if(!Helper.isValidEmail(etEmail.getText().toString())) {
@@ -72,6 +73,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }else if(TextUtils.isEmpty(etPassword.getText().toString())){
             Toast.makeText(LoginActivity.this, "Please enter the password", Toast.LENGTH_LONG).show();
         }else {
+            Helper.showProgress(this);
             Call<CustomerLogin> loginCall = RetrofitApi.getApiInterfaceInstance().customerLogin(WebConstant.CUSTOMER_LOGIN,
                     etEmail.getText().toString(),etPassword.getText().toString());
             loginCall.enqueue(new Callback<CustomerLogin>() {
@@ -79,20 +81,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 public void onResponse(Call<CustomerLogin> call, Response<CustomerLogin> response) {
                     Helper.dismissProgress();
                     CustomerLogin customerLogin = response.body();
-                    if(customerLogin.getResult().getStatus().equalsIgnoreCase(WebConstant.SUCCESS)) {
-                        CustomerLogin.Data data = customerLogin.getResult().getData();
-                        AppPreference.setString(LoginActivity.this,AppPreference.EMAIL,data.getEmail());
-                        AppPreference.setString(LoginActivity.this,AppPreference.FIRSTNAME,data.getFirstname());
-                        AppPreference.setString(LoginActivity.this,AppPreference.LASTNAME,data.getLastname());
-                        AppPreference.setString(LoginActivity.this,AppPreference.MOBILE,data.getMobile());
-                        AppPreference.setString(LoginActivity.this,AppPreference.IS_CHANGE_PASSWORD,data.getIsChangePassword());
-                        AppPreference.setBoolean(LoginActivity.this,AppPreference.IS_LOGIN,true);
-                        setResult(RESULT_OK);
-                        HomeActivity.start(LoginActivity.this);
-                        finish();
+                    if(customerLogin.getSuccess()) {
+                        if (customerLogin.getResult().getStatus().equalsIgnoreCase(WebConstant.SUCCESS)) {
+                            CustomerLogin.Data data = customerLogin.getResult().getData();
+                            AppPreference.setString(LoginActivity.this, AppPreference.EMAIL, data.getEmail());
+                            AppPreference.setString(LoginActivity.this, AppPreference.FIRSTNAME, data.getFirstname());
+                            AppPreference.setString(LoginActivity.this, AppPreference.LASTNAME, data.getLastname());
+                            AppPreference.setString(LoginActivity.this, AppPreference.MOBILE, data.getMobile());
+                            AppPreference.setString(LoginActivity.this, AppPreference.IS_CHANGE_PASSWORD, data.getIsChangePassword());
+                            AppPreference.setBoolean(LoginActivity.this, AppPreference.IS_LOGIN, true);
+                            setResult(RESULT_OK);
+                            HomeActivity.start(LoginActivity.this);
+                            finish();
+                        } else
+                            Toast.makeText(LoginActivity.this, customerLogin.getResult().getMessage(), Toast.LENGTH_LONG).show();
                     }
-                    else
-                        Toast.makeText(LoginActivity.this,customerLogin.getResult().getMessage(),Toast.LENGTH_LONG).show();
                 }
 
                 @Override

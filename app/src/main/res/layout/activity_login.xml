@@ -75,6 +75,7 @@
             android:text="parthiban@mobellotech.com"/>
 
         <!-- parthiban@mobellotech.com -->
+
     </LinearLayout>
 
     <LinearLayout
@@ -95,8 +96,9 @@
             android:layout_marginRight="10dp"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:text="password1"/>
+            android:text="password"/>
 
+        <!--password-->
     </LinearLayout>
 
     <TextView

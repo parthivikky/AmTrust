@@ -22,6 +22,7 @@ import mobello.amtrust.com.R;
 import mobello.amtrust.com.adapter.QuickScanPagerAdapter;
 import mobello.amtrust.com.fragment.SemiAutomaticTestingFragment;
 import mobello.amtrust.com.fragment.VolumeFragment;
+import mobello.amtrust.com.utility.DBHelper;
 import mobello.amtrust.com.widget.NonSwipableViewPager;
 
 public class QuickScanActivity extends AppCompatActivity {
@@ -29,8 +30,9 @@ public class QuickScanActivity extends AppCompatActivity {
     private TextView txtTitle;
     private NonSwipableViewPager viewPager;
 
-
     private QuickScanPagerAdapter adapter;
+
+    private DBHelper dbHelper;
 
     public static void start(Activity activity){
         activity.startActivity(new Intent(activity,QuickScanActivity.class));
@@ -42,8 +44,9 @@ public class QuickScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quick_scan);
         initViews();
         txtTitle.setText(R.string.quick_check);
+        dbHelper.clearQuickScanData();
         adapter = new QuickScanPagerAdapter(getSupportFragmentManager());
-        viewPager.setOffscreenPageLimit(2);
+        viewPager.setOffscreenPageLimit(3);
         viewPager.setPagingEnabled(false);
         viewPager.setAdapter(adapter);
 
@@ -58,6 +61,7 @@ public class QuickScanActivity extends AppCompatActivity {
         txtTitle = _findViewById(R.id.title);
         viewPager = _findViewById(R.id.viewPager);
         viewPager.addOnPageChangeListener(pageChangeListener);
+        dbHelper = DBHelper.getInstance();
     }
 
     private <T extends View>T _findViewById(int resID){

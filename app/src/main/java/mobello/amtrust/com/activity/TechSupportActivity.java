@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import mobello.amtrust.com.R;
 import mobello.amtrust.com.adapter.TechSupportAdapter;
 import mobello.amtrust.com.model.TechSupport;
+import mobello.amtrust.com.utility.Helper;
 import mobello.amtrust.com.utility.ResourceUtils;
 
 public class TechSupportActivity extends AppCompatActivity {
@@ -42,7 +43,7 @@ public class TechSupportActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.title)).setText(R.string.tech_support);
         ((ImageView)findViewById(R.id.menu_right)).setImageResource(R.drawable.filter);
 
-        final TechSupport techSupport = new Gson().fromJson(loadJSONFromAsset(),TechSupport.class);
+        final TechSupport techSupport = new Gson().fromJson(Helper.loadJSONFromAsset("tech_listing.json"),TechSupport.class);
         TechSupportAdapter adapter = new TechSupportAdapter(this,techSupport.getResult());
         listView.setAdapter(adapter);
 
@@ -66,19 +67,5 @@ public class TechSupportActivity extends AppCompatActivity {
         listView = (ListView)findViewById(R.id.list_view);
     }
 
-    public String loadJSONFromAsset() {
-        String json = null;
-        try {
-            InputStream is = getAssets().open("tech_listing.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-    }
+
 }

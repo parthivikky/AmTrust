@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 
 import mobello.amtrust.com.fragment.AutomaticTestingFragment;
+import mobello.amtrust.com.fragment.DamageFragment;
 import mobello.amtrust.com.fragment.SemiAutomaticTestingFragment;
 
 /**
@@ -20,6 +21,7 @@ public class QuickScanPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         fragments.add(new AutomaticTestingFragment());
         fragments.add(new SemiAutomaticTestingFragment());
+        fragments.add(new DamageFragment());
     }
 
     @Override

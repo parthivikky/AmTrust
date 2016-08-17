@@ -29,7 +29,7 @@ public class DeviceActivity extends AppCompatActivity {
         txtAddDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DeviceCategoryActivity.start(DeviceActivity.this,false);
+                AddDeviceActivity.start(DeviceActivity.this);
             }
         });
     }

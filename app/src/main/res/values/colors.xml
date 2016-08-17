@@ -6,6 +6,9 @@
     <color name="colorPrimary_blue">#35629D</color>
     <color name="colorPrimaryDark_blue">#35629D</color>
     <color name="colorPrimary_blue_ripple">#CC35629D</color>
+    <color name="colorPrimary_gray">#485355</color>
+    <color name="colorPrimaryDark_gray">#485355</color>
+    <color name="colorPrimary_gray_ripple">#CC485355</color>
     <color name="login_green">#6FB74B</color>
     <color name="login_green_ripple">#CC6FB74B</color>
     <color name="light_gray">#E2E2E2</color>

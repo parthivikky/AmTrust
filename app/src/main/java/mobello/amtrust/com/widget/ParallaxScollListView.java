@@ -111,7 +111,7 @@ public class ParallaxScollListView extends ListView implements OnScrollListener 
 
     public void setParallaxImageView(BlurredImageView iv) {
         mImageView = iv;
-        mImageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 
     private void initViewsBounds(double zoomRatio) {
@@ -186,7 +186,6 @@ public class ParallaxScollListView extends ListView implements OnScrollListener 
         @Override
         protected void applyTransformation(float interpolatedTime,
                                            Transformation t) {
-
             int newHeight;
             newHeight = (int) (targetHeight - extraHeight * (1 - interpolatedTime));
             mView.getLayoutParams().height = newHeight;

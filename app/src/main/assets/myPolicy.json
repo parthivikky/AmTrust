@@ -1,0 +1,42 @@
+ [{
+  "policyName": "Mobile Protection Policy 1",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+
+  },{
+  "policyName": "Mobile Protection Policy 2",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+  
+  },{
+  "policyName": "Mobile Protection Policy 3",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+  
+  },{
+  "policyName": "Mobile Protection Policy 4",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+  
+  },{
+  "policyName": "Mobile Protection Policy 5",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+  
+  },{
+  "policyName": "Mobile Protection Policy 6",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+  
+  },{
+  "policyName": "Mobile Protection Policy 7",
+  "expiry": "Expire on 21st May 2017",
+  "cost" : "20 $ Annually",
+  "device" : "iPhone 6 Plus"
+  }]

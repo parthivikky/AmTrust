@@ -1,0 +1,155 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context="mobello.amtrust.com.fragment.DamageFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/damage_text"
+                android:text="Cracked Screen" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:kswTintColor="#FF5449" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/damage_text"
+                android:text="Replaced Screen" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:kswTintColor="#FF5449" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/damage_text"
+                android:text="Water Damage" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:kswTintColor="#FF5449" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/damage_text"
+                android:text="Quiet and Muffled Speakers" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:kswTintColor="#FF5449" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/damage_text"
+                android:text="Short Battery Life" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:kswTintColor="#FF5449" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <TextView
+                style="@style/damage_text"
+                android:text="Scratches" />
+
+            <com.kyleduo.switchbutton.SwitchButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                app:kswTintColor="#FF5449" />
+
+        </RelativeLayout>
+
+        <com.andexert.library.RippleView
+            style="@style/Wrap_Content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary"
+            app:rv_rippleDuration="100"
+            app:rv_type="simpleRipple"
+            app:rv_zoom="true"
+            app:rv_zoomDuration="100">
+
+            <TextView
+                android:id="@+id/continues"
+                style="@style/Wrap_Content"
+                android:background="@drawable/button_primary_blue"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp"
+                android:paddingTop="10dp"
+                android:text="@string/continues"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp" />
+
+        </com.andexert.library.RippleView>
+
+    </LinearLayout>
+
+</ScrollView>

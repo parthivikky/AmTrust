@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mobello.amtrust.com.activity.ProfileEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#99000000">
+
+            <ImageView
+                android:id="@+id/done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_done_all" />
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:background="#4D000000"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/camera"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_camera" />
+
+                    <ImageView
+                        android:id="@+id/gallery"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_collections" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="First Name" />
+
+            <EditText
+                android:id="@+id/first_name"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="Last Name" />
+
+            <EditText
+                android:id="@+id/last_name"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="Address" />
+
+            <EditText
+                android:id="@+id/address"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="City" />
+
+            <EditText
+                android:id="@+id/city"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="State" />
+
+            <EditText
+                android:id="@+id/state"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="Country" />
+
+            <EditText
+                android:id="@+id/country"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/edit_profile_header"
+                android:text="Country Code" />
+
+            <TextView
+                android:id="@+id/country_code"
+                style="@style/edit_profile_text" />
+
+        </RelativeLayout>
+
+        <View style="@style/more_line" />
+
+    </LinearLayout>
+
+</ScrollView>

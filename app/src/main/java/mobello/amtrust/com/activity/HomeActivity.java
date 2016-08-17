@@ -42,7 +42,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeActivity extends AppCompatActivity  {
+public class HomeActivity extends AppCompatActivity {
 
     private int[] tabIcons = {R.drawable.home_tab,
             R.drawable.timeline_tab,
@@ -54,21 +54,26 @@ public class HomeActivity extends AppCompatActivity  {
 
     private HomePagerAdapter viewPagerAdapter;
 
-    public static void start(Activity activity){
-        activity.startActivity(new Intent(activity,HomeActivity.class));
+    public static void start(Activity activity) {
+        activity.startActivity(new Intent(activity, HomeActivity.class));
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
         initViews();
 
-            viewPagerAdapter = new HomePagerAdapter(getSupportFragmentManager());
-            viewPager.setOffscreenPageLimit(3);
-            viewPager.setAdapter(viewPagerAdapter);
-            tabLayout.setupWithViewPager(viewPager);
-            setTabIcons();
+        viewPagerAdapter = new HomePagerAdapter(getSupportFragmentManager());
+        viewPager.setOffscreenPageLimit(3);
+        viewPager.setAdapter(viewPagerAdapter);
+        tabLayout.setupWithViewPager(viewPager);
+        setTabIcons();
     }
 
     private void initViews() {
@@ -78,10 +83,10 @@ public class HomeActivity extends AppCompatActivity  {
     }
 
 
-
     ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
         @Override
-        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+        public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        }
 
         @Override
         public void onPageSelected(int position) {
@@ -102,15 +107,15 @@ public class HomeActivity extends AppCompatActivity  {
         }
 
         @Override
-        public void onPageScrollStateChanged(int state) {}
+        public void onPageScrollStateChanged(int state) {
+        }
     };
 
-
-    public <T extends View> T _findViewById(int viewId){
+    public <T extends View> T _findViewById(int viewId) {
         return (T) findViewById(viewId);
     }
 
-    public void setTabIcons(){
+    public void setTabIcons() {
         for (int i = 0; i < tabIcons.length; i++) {
             tabLayout.getTabAt(i).setIcon(tabIcons[i]);
         }
