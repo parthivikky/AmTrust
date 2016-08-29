@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="mobello.amtrust.com.activity.TestingDialogActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <ImageView
+                        android:id="@+id/top_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/battery_charging"/>
+
+                    <TextView
+                        android:id="@+id/txt_counter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#CC000000"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="60sp"
+                        android:visibility="gone"/>
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Click the play button and hear the voice through the receiver"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/start"
+                    style="@style/login_button_ripple"
+                    android:layout_width="match_parent"
+                    android:inputType="textCapSentences"
+                    android:text="Start"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+
+                <EditText
+                    android:id="@+id/input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/testing_dialog_edittext_bg"
+                    android:gravity="center"
+                    android:hint="Enter the random number here"
+                    android:padding="10dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/medium_gray"
+                    android:textSize="18sp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/ok"
+                    style="@style/login_button_ripple"
+                    android:layout_width="match_parent"
+                    android:inputType="textCapSentences"
+                    android:text="Ok"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:visibility="gone"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tickContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33000000"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/correct"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_correct"/>
+
+    </LinearLayout>
+
+</FrameLayout>
