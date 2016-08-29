@@ -406,13 +406,6 @@ public class AutomaticTestingFragment extends Fragment implements GoogleApiClien
                 @Override
                 public void onReceive(Context context, Intent intent) {
                     if (intent.getAction().equals(Intent.ACTION_BATTERY_CHANGED)) {
-                        /*float temperature = (float) (intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, 0)) / 10;
-                        int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE,-1);
-                        int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL,-1);
-                        int percentage = (level/ scale) * 100;
-                        Log.i("scale", ""+ scale);
-                        Log.i("level", ""+ level);
-                        Log.i("percentage", ""+ percentage);*/
                         int status = intent.getIntExtra(BatteryManager.EXTRA_HEALTH,0);
                         if (status == BatteryManager.BATTERY_HEALTH_GOOD){
                             imgBattery.setImageResource(R.drawable.ic_battery_green);

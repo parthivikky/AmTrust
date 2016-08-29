@@ -11,6 +11,7 @@ import mobello.amtrust.com.model.RetailersPrice;
 import mobello.amtrust.com.model.SessionLogin;
 import mobello.amtrust.com.model.Status;
 import mobello.amtrust.com.model.UserExist;
+import mobello.amtrust.com.model.UserLog;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -155,5 +156,14 @@ public class RetrofitApi {
                 @Part("sessionName") RequestBody sessionName,
                 @Part("element") RequestBody element,
                 @Part MultipartBody.Part filedata);
+
+        @FormUrlEncoded
+        @POST(BASE_URL)
+        Call<UserLog> userLog(
+                @Field("operation") String operation,
+                @Field("sessionName") String sessionName,
+                @Field("email_id") String email_id,
+                @Field("channel") String channel);
+
     }
 }

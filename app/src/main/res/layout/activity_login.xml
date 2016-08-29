@@ -72,7 +72,7 @@
             android:layout_marginRight="10dp"
             android:hint="@string/email_address"
             android:inputType="text"
-            android:text="parthiban@mobellotech.com"/>
+            android:text=""/>
 
         <!-- parthiban@mobellotech.com -->
 
@@ -96,7 +96,7 @@
             android:layout_marginRight="10dp"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:text="password"/>
+            android:text=""/>
 
         <!--password-->
     </LinearLayout>

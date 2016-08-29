@@ -1,67 +1,76 @@
 package mobello.amtrust.com.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
+import android.widget.ListView;
+import android.widget.RelativeLayout;
 import mobello.amtrust.com.R;
-import mobello.amtrust.com.utility.ResourceUtils;
+import mobello.amtrust.com.adapter.UserLogAdapter;
+import mobello.amtrust.com.model.UserLog;
+import mobello.amtrust.com.utility.AppPreference;
+import mobello.amtrust.com.utility.Helper;
+import mobello.amtrust.com.utility.RetrofitApi;
+import mobello.amtrust.com.utility.WebConstant;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class TimelineFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment TimelineFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static TimelineFragment newInstance(String param1, String param2) {
-        TimelineFragment fragment = new TimelineFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-    public TimelineFragment() {
-        // Required empty public constructor
-    }
+    private RelativeLayout emptyContainer;
+    private ListView listView;
+    private UserLogAdapter adapter;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        getUserActivityLog();
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_timeline, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_timeline, container, false);
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         initViews(view);
-        return view;
+    }
+
+    private void getUserActivityLog() {
+//        Helper.showProgress(getActivity());
+        RetrofitApi.ApiInterface apiInterface = RetrofitApi.getApiInterfaceInstance();
+        Call<UserLog> userLogCall = apiInterface.userLog(WebConstant.USER_ACTIVITY_LOG,
+                AppPreference.getString(getActivity(), AppPreference.SESSION_NAME), AppPreference.getString(getActivity(), AppPreference.EMAIL), "AMS");
+        userLogCall.enqueue(new Callback<UserLog>() {
+            @Override
+            public void onResponse(Call<UserLog> call, Response<UserLog> response) {
+//                Helper.dismissProgress();
+                UserLog userLog = response.body();
+                if(userLog.getSuccess()){
+                    if(userLog.getResult().getStatus().equalsIgnoreCase(WebConstant.SUCCESS)){
+                        adapter = new UserLogAdapter(getActivity(),userLog.getResult().getData());
+                        listView.setAdapter(adapter);
+                    }
+                }else{
+                    Helper.showMessageToast(getActivity(),userLog.getError().getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserLog> call, Throwable t) {
+//                Helper.dismissProgress();
+            }
+        });
     }
 
     private void initViews(View view) {
-
+        emptyContainer = (RelativeLayout)view.findViewById(R.id.empty_container);
+        listView = (ListView)view.findViewById(R.id.list_view);
     }
-
 }

@@ -1,24 +1,51 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="mobello.amtrust.com.fragment.TimelineFragment">
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context="mobello.amtrust.com.fragment.TimelineFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <ImageView
-        android:id="@+id/empty_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/ic_activity_empty"
-        android:layout_marginTop="60dp"
-        android:layout_centerHorizontal="true"/>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#F0EFF5" />
 
-    <TextView
-        style="@style/Wrap_Content"
-        android:text="No activity found!"
-        android:layout_below="@+id/empty_image"
-        android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/dark_gray"/>
+    <View
+        android:id="@+id/line"
+        style="@style/more_line"
+        android:layout_marginLeft="0dp"
+        android:layout_below="@id/view"/>
+
+    <RelativeLayout
+        android:id="@+id/empty_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:layout_below="@id/line">
+
+        <ImageView
+            android:id="@+id/empty_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:src="@drawable/ic_activity_empty"/>
+
+        <TextView
+            style="@style/Wrap_Content"
+            android:layout_below="@+id/empty_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="No activity found!"
+            android:textColor="@color/dark_gray"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:layout_below="@id/line"/>
 
 </RelativeLayout>

@@ -25,7 +25,7 @@
     <string name="my_device">MY DEVICE</string>
     <string name="add_new_device">Add New Device</string>
     <string name="choose">Choose</string>
-    <string name="device">DEVICE</string>
+    <string name="device">Device</string>
     <string name="policy_management">POLICY MANAGEMENT</string>
     <string name="my_policy">MY POLICY</string>
     <string name="phone">phone</string>
@@ -65,4 +65,22 @@
     <string name="health_summary">health summary</string>
     <string name="buy_back_offer">buy back offer</string>
     <string name="summary">Summary</string>
+
+    <string name="full_scan">FULL SCAN</string>
+    <string name="audio">Audio</string>
+    <string name="battery">Battery</string>
+    <string name="camera">Camera</string>
+    <string name="call">Call</string>
+    <string name="connect">Connect</string>
+    <string name="display">Display</string>
+    <string name="gps">GPS</string>
+    <string name="misc">Misc</string>
+    <string name="sensor">Sensor</string>
+    <string name="battery_test_description">The Battery is the main resource of your mobile it gives the power for mobile for whole hardware component so we are going to check the battery charging state.</string>
+    <string name="about">About</string>
+    <string name="battery_test_instructions_title">Instructions</string>
+    <string name="battery_test_instructions">1. Click on \"Test Now\" button below.\n\n2. Countdown timer will start automatically, when you click on test now button.\n\n3. With in the time you have to plugin the charger as showcased in image above.\n\n4. If it is success it will show you tick mark.\n5. If you fail to connect with in time, go back to the menu.\n</string>
+    <string name="test">Test Now</string>
+    <string name="stop">stop</string>
+
 </resources>

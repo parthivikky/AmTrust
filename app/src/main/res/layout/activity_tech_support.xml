@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="mobello.amtrust.com.activity.TechSupportActivity">
 
-    <include layout="@layout/actionbar_transparent_with_icon"/>
+    <include layout="@layout/actionbar_with_icon"/>
 
     <ListView
         android:id="@+id/list_view"

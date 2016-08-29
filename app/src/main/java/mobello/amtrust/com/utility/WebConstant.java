@@ -27,4 +27,5 @@ public class WebConstant {
     public static final String  CONTACTS_MODULE = "Contacts";
 
 
+    public static final String USER_ACTIVITY_LOG = "ams.userlog";
 }

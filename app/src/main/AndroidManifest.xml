@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="mobello.amtrust.com">
+          xmlns:tools="http://schemas.android.com/tools"
+          package="mobello.amtrust.com">
 
-    <uses-sdk tools:overrideLibrary="me.aflak.ezcam" />
+    <uses-sdk tools:overrideLibrary="me.aflak.ezcam"/>
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false" />
+        android:required="false"/>
 
     <application
         android:name=".utility.AmTrustApp"
@@ -38,16 +40,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_White">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.LoginActivity"
-            android:theme="@style/AppTheme_White" />
-        <activity android:name=".activity.RegisterationCheckActivity" />
-        <activity android:name=".activity.RegisterActivity" />
+            android:theme="@style/AppTheme_White"/>
+        <activity android:name=".activity.RegisterationCheckActivity"/>
+        <activity android:name=".activity.RegisterActivity"/>
         <activity
             android:name=".activity.HomeActivity"
             android:theme="@style/AppTheme_White">
@@ -60,30 +62,80 @@
             </intent-filter>
             -->
         </activity>
-        <activity android:name=".activity.DeviceActivity" />
-        <activity android:name=".activity.AddDeviceActivity" />
-        <activity android:name=".activity.DeviceCategoryActivity" />
-        <activity android:name=".activity.PolicyActivity" />
-        <activity android:name=".activity.PolicyDetailActivity" />
-        <activity android:name=".activity.AllPlansActivity" />
-        <activity android:name=".activity.ProductPurchaseActivity" />
-        <activity android:name=".activity.TechSupportActivity" />
-        <activity android:name=".activity.TechSupportStepActivity" />
-        <activity android:name=".activity.DeviceDiagnosisActivity" />
-        <activity android:name=".activity.QuickScanActivity" />
-        <activity android:name=".activity.ForgotPasswordActivity" />
-        <activity android:name=".activity.ChangePasswordActivity" />
-        <activity android:name=".activity.Camera2Activity" />
-        <activity android:name=".activity.CameraActivity" />
+        <activity android:name=".activity.DeviceActivity"/>
+        <activity android:name=".activity.AddDeviceActivity"/>
+        <activity android:name=".activity.DeviceCategoryActivity"/>
+        <activity android:name=".activity.PolicyActivity"/>
+        <activity android:name=".activity.PolicyDetailActivity"/>
+        <activity android:name=".activity.AllPlansActivity"/>
+        <activity android:name=".activity.ProductPurchaseActivity"/>
+        <activity android:name=".activity.TechSupportActivity"/>
+        <activity android:name=".activity.TechSupportStepActivity"/>
+        <activity android:name=".activity.DeviceDiagnosisActivity"/>
+        <activity android:name=".activity.QuickScanActivity"/>
+        <activity android:name=".activity.ForgotPasswordActivity"/>
+        <activity android:name=".activity.ChangePasswordActivity"/>
+        <activity android:name=".activity.Camera2Activity"/>
+        <activity android:name=".activity.CameraActivity"/>
         <activity
             android:name=".activity.FullTouchActivity"
-            android:theme="@style/AppTheme_White" />
-        <activity android:name=".activity.HealthResultActivity" />
-        <activity android:name=".activity.SummaryActivity" />
-        <activity android:name=".activity.ProfileEditActivity" />
-        <activity android:name=".activity.ProtectionPlansActivity" />
-        <activity android:name=".activity.ChooserActivity" />
-        <activity android:name=".activity.TradeInActivity"></activity>
+            android:theme="@style/AppTheme_White"/>
+        <activity android:name=".activity.HealthResultActivity"/>
+        <activity android:name=".activity.SummaryActivity"/>
+        <activity android:name=".activity.ProfileEditActivity"/>
+        <activity android:name=".activity.ProtectionPlansActivity"/>
+        <activity android:name=".activity.ChooserActivity"/>
+        <activity android:name=".activity.TradeInActivity"/>
+        <activity
+            android:name=".activity.FullScanActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.CallReceiverActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HeadsetTestActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HeadSetMicrophoneTestActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.HeadSetButtonTestActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.MicrophoneTestActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.SpeakerTestActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".activity.BatteryChargingTestActivity"
+            android:screenOrientation="portrait"/>
+
+        <receiver android:name=".receiver.PowerConnectionReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.HeadSetButtonStateReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".activity.BatteryTemperatureTestActivity"/>
+        <activity android:name=".activity.BackCameraTestActivity"/>
+        <activity android:name=".activity.CameraFlashTestActivity"/>
+        <activity android:name=".activity.BackKeyTestActivity"/>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version"/>
+
+        <activity
+            android:name=".activity.TestingDialogActivity"
+            android:theme="@style/AppTheme_Dialog"/>
+        <activity android:name=".activity.TestingTimerActivity">
+        </activity>
     </application>
 
 </manifest>

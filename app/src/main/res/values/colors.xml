@@ -20,4 +20,9 @@
     <color name="green">#70B64A</color>
     <color name="home_list_color">#5F5F5F</color>
     <color name="control_background">#cc4285f4</color>
+    <color name="white">#FFF</color>
+    
+    <color name="button_green">#6FB64C</color>
+    <color name="device_text_background">#E4ECF4</color>
+    <color name="divider">#CAC9CD</color>
 </resources>

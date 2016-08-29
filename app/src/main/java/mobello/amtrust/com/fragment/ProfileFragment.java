@@ -1,5 +1,6 @@
 package mobello.amtrust.com.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -29,6 +30,7 @@ import retrofit2.Response;
 
 public class ProfileFragment extends Fragment {
 
+    private static final int PROFILE_EDIT_REQUEST_CODE = 1;
     private View view, headerView;
     private ImageView imgEdit;
     private TextView txtDevices,txtPolicies,txtDiagnosis;
@@ -120,7 +122,7 @@ public class ProfileFragment extends Fragment {
         imgEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProfileEditActivity.start(getActivity(),result);
+                ProfileEditActivity.startForResult(getActivity(),result,PROFILE_EDIT_REQUEST_CODE);
             }
         });
     }
@@ -185,5 +187,13 @@ public class ProfileFragment extends Fragment {
         linkedHashMap.put("State", result.getState());
         linkedHashMap.put("Country", result.getCountry());
         adapter.insert(linkedHashMap);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == PROFILE_EDIT_REQUEST_CODE && resultCode == getActivity().RESULT_OK){
+            getProfileInfo();
+        }
     }
 }

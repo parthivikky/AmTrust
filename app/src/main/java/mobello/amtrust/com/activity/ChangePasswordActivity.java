@@ -74,11 +74,16 @@ public class ChangePasswordActivity extends AppCompatActivity {
                 public void onResponse(Call<Status> call, Response<Status> response) {
                     Helper.dismissProgress();
                     Status status = response.body();
-                    if(status.getResult().getStatus().equalsIgnoreCase(WebConstant.SUCCESS)){
-                        Toast.makeText(ChangePasswordActivity.this,status.getResult().getMessage(),Toast.LENGTH_LONG).show();
-                        finish();
-                    }else{
-                        Toast.makeText(ChangePasswordActivity.this, status.getResult().getMessage(),Toast.LENGTH_LONG).show();
+                    if (status.getSuccess()) {
+                        if (status.getResult().getStatus().equalsIgnoreCase(WebConstant.SUCCESS)) {
+                            Toast.makeText(ChangePasswordActivity.this, status.getResult().getMessage(), Toast.LENGTH_LONG).show();
+                            finish();
+                        } else {
+                            Toast.makeText(ChangePasswordActivity.this, status.getResult().getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else{
+                        Toast.makeText(ChangePasswordActivity.this, status.getError().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
 

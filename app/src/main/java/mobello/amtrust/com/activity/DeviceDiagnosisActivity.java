@@ -47,6 +47,10 @@ public class DeviceDiagnosisActivity extends AppCompatActivity {
         return (T)findViewById(resId);
     }
 
+    public void fullScan(View view) {
+        FullScanActivity.start(this);
+    }
+
     private class ViewHolder{
         TextView txtScanName,txtScanDate;
     }

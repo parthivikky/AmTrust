@@ -38,9 +38,9 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
 
     private static final int REQUEST_GALLERY = 1;
 
-    public static void start(Activity activity, ProfileInfo.Result_ info) {
-        activity.startActivity(new Intent(activity, ProfileEditActivity.class)
-                .putExtra("profile_info", info));
+    public static void startForResult(Activity activity, ProfileInfo.Result_ info,int request_code) {
+        activity.startActivityForResult(new Intent(activity, ProfileEditActivity.class)
+                .putExtra("profile_info", info),request_code);
     }
 
     private EditText etFirstName, etLastName, etAddress, etCity, etState, etCountry;
@@ -103,16 +103,16 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
 
     private void updateToServer() {
         Helper.showProgress(this);
-        JSONObject jsonObject = formData();
-        RequestBody reqFile = null;
+        MultipartBody.Part fileBody = null;
         if (imagePath != null) {
             Log.i("path",imagePath);
             file = new File(imagePath);
-            reqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            RequestBody reqFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+            fileBody = MultipartBody.Part.createFormData("filedata","picture", reqFile);
         }
-        MultipartBody.Part fileBody = MultipartBody.Part.createFormData("filedata",file.getName(), reqFile);
         RequestBody operationBody = RequestBody.create(MediaType.parse("text/plain"), WebConstant.PROFILE_UPDATE);
         RequestBody sessionBody = RequestBody.create(MediaType.parse("text/plain"), AppPreference.getString(this, AppPreference.SESSION_NAME));
+        JSONObject jsonObject = formData(file == null ? null : file.getName());
         RequestBody elementBody = RequestBody.create(MediaType.parse("text/plain"), jsonObject.toString());
         RetrofitApi.ApiInterface apiInterface = RetrofitApi.getApiInterfaceInstance();
         Call<ProfileUpdate> updateCall = apiInterface.updateProfile(operationBody, sessionBody, elementBody, fileBody);
@@ -124,6 +124,7 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
                 if (profileUpdate.getSuccess()) {
                     if (profileUpdate.getResult().getStatus().equalsIgnoreCase(WebConstant.SUCCESS)) {
                         Toast.makeText(ProfileEditActivity.this, profileUpdate.getResult().getMessage(), Toast.LENGTH_LONG).show();
+                        setResult(RESULT_OK);
                         finish();
                     }
                 }
@@ -137,7 +138,7 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
         });
     }
 
-    private JSONObject formData() {
+    private JSONObject formData(String fileName) {
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("email", profileInfo.getEmail());
@@ -149,7 +150,7 @@ public class ProfileEditActivity extends AppCompatActivity implements View.OnCli
             jsonObject.put("state", etState.getText().toString());
             jsonObject.put("city", etCity.getText().toString());
             jsonObject.put("address", etAddress.getText().toString());
-            jsonObject.put("filename", "profile_pic");
+            jsonObject.put("filename", fileName);
             jsonObject.put("contactid", profileInfo.getContactid());
             return jsonObject;
         } catch (JSONException e) {
